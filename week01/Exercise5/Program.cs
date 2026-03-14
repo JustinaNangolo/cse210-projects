@@ -4,33 +4,32 @@ class Program
 {
     static void Main(string[] args)
     {
-        DisplayWelcomeMessage();
+        DisplayWelcome();
         string userName = PromptUsername();
         int userNumber = PromptUserNumber();
 
         int squareNumber = SquareNumber(userNumber);
         DisplayResult(userName, userNumber, squareNumber);
-
-
     }
-    static void DisplayMessage()
+
+    static void DisplayWelcome()
     {
         Console.WriteLine("Welcome to the Program.");
     }
-    static void PromptUsername()
+    static string PromptUsername()
     {
-        Console.WriteLine("Please enter your name: ");
+        Console.Write("Please enter your name: ");
         string name = Console.ReadLine();
         return name;
     }
-    static void PromptUserNumber()
+    static int PromptUserNumber()
     {
-        Console.WriteLine("Please enter your favorite number: ");
+        Console.Write("Please enter your favorite number: ");
         int number = int.Parse(Console.ReadLine());
         return number;
     }
 
-    static void SquareNumber(int number)
+    static int SquareNumber(int number)
     {
         int square = number * number;
         return square;
