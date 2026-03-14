@@ -57,7 +57,7 @@ class Program
 */
 
 
-/*
+
 // PART 3: Loop Until Correct with Option to Play Again
 
 
@@ -95,4 +95,3 @@ class Program
     }
 }
 
-*/
