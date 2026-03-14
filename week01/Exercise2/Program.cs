@@ -1,4 +1,5 @@
 using System;
+using System.Reflection.Metadata;
 
 class Program
 {
@@ -8,6 +9,7 @@ class Program
         string answer = Console.ReadLine();
         int percent = int.Parse(answer);
         string letter = "";
+        string sign = "";
 
         if (percent >= 90)
         {
@@ -30,7 +32,29 @@ class Program
             letter = "F";
         }
 
-        Console.WriteLine($"Your letter grade is: {letter}");
+        int lastDigit = percent % 10;
+        if (lastDigit >= 7 )
+        {
+            sign = "+";
+        }
+        else if (lastDigit <= 3 )
+        {
+            sign = "-";
+        }
+        else        {
+            sign = "";
+        }
+        if (letter == "A" && sign == "+")
+        {
+            sign = "";
+        }
+
+        if (letter == "F")
+        {
+            sign = "";
+        }
+
+        Console.WriteLine($"Your letter grade is: {letter}{sign}");
         if (percent >= 70)
         {
             Console.WriteLine("Congratulations! You passed the class!");
