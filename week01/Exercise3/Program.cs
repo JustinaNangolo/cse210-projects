@@ -68,11 +68,13 @@ class Program
             Random randomGenerator = new Random();
             int magicNumber3 = randomGenerator.Next(1, 101);
             int guess3 = -1;
+            int guessCount = 0;
 
             while (guess3 != magicNumber3)
             {
                 Console.Write("What is your guess? ");
                 guess3 = int.Parse(Console.ReadLine());
+                guessCount++;
 
                 if (guess3 < magicNumber3)
                 {
@@ -87,6 +89,7 @@ class Program
                     Console.WriteLine("You guessed it!");
                 }
             }
+            Console.WriteLine($"It took you {guessCount} guesses.");
 
             Console.Write("Do you want to play again (yes/no)? ");
             response = Console.ReadLine();
