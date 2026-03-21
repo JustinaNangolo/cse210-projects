@@ -40,7 +40,7 @@ class Program
                 Entry entry = new Entry();
                 entry._date = DateTime.Now.ToShortDateString();
                 entry._promptText = prompt;
-                entry._entryText = response; // ✅ FIXED
+                entry._entryText = response; 
 
                 journal.AddEntry(entry);
             }
