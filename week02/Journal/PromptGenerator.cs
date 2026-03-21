@@ -1,21 +1,51 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public class PromptGenerator
 {
-    public List<string> _prompts = new List<string>()
+    private Dictionary<string, List<string>> _promptsByCategory;
+    private Random _rand = new Random();
+
+    public PromptGenerator()
     {
-        "What are you grateful for this morning, and what intentions do you have for today?",
-        "How did you take care of your body today, and how did it make you feel?",
-        "What emotions did you experience today, and what influenced them?",
-        "How did you spend your evening, and what moments felt meaningful?",
-        "What is one moment from today that you want to remember and why?"
-    };
+        _promptsByCategory = new Dictionary<string, List<string>>()
+        {
+            { "Morning", new List<string> {
+                "What are you grateful for this morning?",
+                "What  do you want to achieve today?"
+            }},
+            { "Exercise", new List<string> {
+                "How did you move your body today?",
+                "What physical activity helped you feel better?"
+            }},
+            { "Hydration", new List<string> {
+                "How did you take care of your body today?",
+                "Did you stay hydrated, and how did it affect your productivity?"
+            }},
+            { "Emotions", new List<string> {
+                "What emotions did you experience today?",
+                "What influenced your feelings the most today?"
+            }},
+            { "Evening", new List<string> {
+                "How did you spend your evening?",
+                "What moment brought you peace or joy tonight?"
+            }}
+        };
+    }
 
     public string GetRandomPrompt()
     {
-        Random rand = new Random();
-        int index = rand.Next(_prompts.Count);
-        return _prompts[index];
-    }
+        List<string> categories = new List<string>(_promptsByCategory.Keys);
+
+        // pick ONE random category
+        string randomCategory = categories[_rand.Next(categories.Count)];
+
+        // pick ONE prompt from that category
+        List<string> prompts = _promptsByCategory[randomCategory];
+        string prompt = prompts[_rand.Next(prompts.Count)];
+
+        return prompt;
+    } 
+
 }
