@@ -16,13 +16,13 @@ class Program
         job2._startYear = "2018";
         job2._endYear = "2020";
 
-        Resume resume = new Resume();
-        resume._name = "John Doe";
-        resume._jobs.Add(job1);
-        resume._jobs.Add(job2);
-
-        resume.Display();
+        Resume myResume = new Resume();
+        myResume._name = "John Doe";
         
+        
+        myResume._jobs.Add(job1);
+        myResume._jobs.Add(job2);
 
+        myResume.Display();
     }
 }
