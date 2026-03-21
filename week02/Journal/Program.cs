@@ -20,7 +20,13 @@ class Program
             Console.WriteLine("5. Exit");
 
             Console.Write("What would you like to do? ");
-            choice = int.Parse(Console.ReadLine());
+            string input = Console.ReadLine();
+
+            if (!int.TryParse(input, out choice) || choice < 1 || choice > 5)
+            {
+                Console.WriteLine("Invalid option. Please try another choice (1-5).");
+                continue;
+            }
 
             if (choice == 1)
             {
