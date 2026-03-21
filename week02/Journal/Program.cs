@@ -1,3 +1,7 @@
+
+// Exceeding Requirements
+//  I have added int parse to stop the program from crashing and restart instead, if a wrong entry is entered.
+
 using System;
 using System.Collections.Generic;
 
