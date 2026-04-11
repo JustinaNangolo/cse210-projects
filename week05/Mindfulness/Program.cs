@@ -4,8 +4,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        // EXCEEDING REQUIREMENTS: To get 100%, consider adding a 
-        // "usedPrompt" list in ReflectingActivity to prevent repeats!
 
         string choice = "";
         while (choice != "4")
