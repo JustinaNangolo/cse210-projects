@@ -1,11 +1,14 @@
 using System;
-// CREATIVITY: I added a level-up system based on score thresholds
-// and a color-coded console for different goal types.
+/*
+EXCEEDING REQUIREMENTS:
+  1. Added error handling in LoadGoals to prevent program crashes if a filename is mistyped or missing and 
+  
+  
+*/
 class Program
 {
     static void Main(string[] args)
     {
-    
         GoalManager manager = new GoalManager();
         manager.Start();
     }
