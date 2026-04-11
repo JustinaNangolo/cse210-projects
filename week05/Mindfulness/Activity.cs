@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
-using System.IO; // Required for StreamWriter and File
+using System.IO; 
 
 public class Activity
 {
