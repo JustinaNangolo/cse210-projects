@@ -1,8 +1,8 @@
 using System;
 using System.IO;
 
-// CREATIVITY AND EXCEEDING REQUIREMENTS:
-// 1. Added an Activity Log feature that persists to a file (activity_log.txt).
+//EXCEEDING REQUIREMENTS:
+// 1. Added an Activity Log feature that saves to a file (activity_log.txt).
 // 2. Added a menu option (4) to read and display this log directly in the program.
 // 3. Implemented anti-repetition logic in the ReflectingActivity to ensure questions 
 //    are not repeated until the full list has been used.
