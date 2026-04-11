@@ -4,7 +4,9 @@ public class ListingActivity : Activity
     {
         "Who are people that you appreciate?",
         "What are personal strengths of yours?",
-        "Who are people that you have helped this week?"
+        "Who are people that you have helped this week?",
+        "When have you felt the Holy Ghost this week?",
+        "Who are some of your personal heroes?"
     };
 
     public ListingActivity() : base("Listing Activity", "This activity will help you reflect on the good things in your life by having you list as many things as you can.")
@@ -30,7 +32,6 @@ public class ListingActivity : Activity
         while (DateTime.Now < endTime)
         {
             Console.Write("> ");
-            // This is tricky: ReadLine blocks. If time runs out while typing, it still finishes the line.
             string input = Console.ReadLine();
             userList.Add(input);
         }

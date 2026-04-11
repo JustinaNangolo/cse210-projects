@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 public class ReflectingActivity : Activity
 {
-    // Encapsulation: Member variables are private
+    
     private List<string> _prompts = new List<string>();
     private List<string> _questions = new List<string>();
     private List<string> _unusedQuestions = new List<string>();
 
-    // Constructor: Sets up the specific name, description, and populates lists
+    
     public ReflectingActivity() : base("Reflection Activity", "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.")
     {
         _prompts.AddRange(new string[] {
@@ -30,7 +30,7 @@ public class ReflectingActivity : Activity
             "How can you keep this experience in mind in the future?"
         });
 
-        // Initialize the tracking list for creativity requirement
+        
         ResetQuestions();
     }
 
@@ -51,11 +51,11 @@ public class ReflectingActivity : Activity
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(_duration);
 
-        // Functional Requirement: Continue until duration is reached
+        
         while (DateTime.Now < endTime)
         {
             DisplayQuestions();
-            // The spinner provides the necessary pause between questions
+            
             ShowSpinner(8);
             Console.WriteLine();
         }
@@ -74,7 +74,7 @@ public class ReflectingActivity : Activity
     {
         Random random = new Random();
 
-        // Creativity/Exceeding Requirements: Logic to prevent duplicate questions
+        
         if (_unusedQuestions.Count == 0)
         {
             ResetQuestions();
@@ -82,7 +82,7 @@ public class ReflectingActivity : Activity
 
         int index = random.Next(_unusedQuestions.Count);
         string question = _unusedQuestions[index];
-        _unusedQuestions.RemoveAt(index); // Remove so it isn't picked again this session
+        _unusedQuestions.RemoveAt(index); 
 
         return question;
     }

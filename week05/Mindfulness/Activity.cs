@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
+using System.IO; // Required for StreamWriter and File
 
 public class Activity
 {
@@ -22,11 +23,29 @@ public class Activity
         Console.WriteLine(_description);
         Console.WriteLine();
         Console.Write("How long, in seconds, would you like for your session? ");
-        _duration = int.Parse(Console.ReadLine());
+
+        // Handling the input
+        if (int.TryParse(Console.ReadLine(), out int result))
+        {
+            _duration = result;
+        }
+        else
+        {
+            _duration = 30; 
+        }
 
         Console.Clear();
         Console.WriteLine("Get ready...");
         ShowSpinner(3);
+    }
+
+    public void LogActivity()
+    {
+        string logEntry = $"{DateTime.Now}: Completed {_name} for {_duration} seconds.";
+        using (StreamWriter sw = File.AppendText("activity_log.txt"))
+        {
+            sw.WriteLine(logEntry);
+        }
     }
 
     public void DisplayEndingMessage()
@@ -35,6 +54,9 @@ public class Activity
         Console.WriteLine("Well done!!");
         ShowSpinner(3);
         Console.WriteLine($"You have completed another {_duration} seconds of the {_name}.");
+
+        LogActivity();
+
         ShowSpinner(3);
     }
 
